@@ -1,0 +1,21 @@
+import numpy as np
+
+# Crear una matriz vacía de 4x4
+matriz = np.zeros((4, 4))
+
+# Solicitar al usuario que ingrese los valores (pesos) de la matriz
+print("Ingrese los valores para la matriz 4x4:")
+
+for i in range(4):
+    for j in range(4):
+        while True:  # Ciclo para validar el input
+            try:
+                valor = float(input(f"Ingrese el valor para la posición [{i+1}, {j+1}]: "))
+                matriz[i, j] = valor
+                break  # Salir del ciclo si el input es válido
+            except ValueError:
+                print("Entrada no válida. Por favor, ingrese un número.")
+
+# Mostrar la matriz con los valores introducidos
+print("\nMatriz con los pesos introducidos:")
+print(matriz)
